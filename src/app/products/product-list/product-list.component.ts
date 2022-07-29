@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApisService } from "../apis.service";
+import { ApisService } from "../services/apis.service";
 import Swal from "sweetalert2";
 
 @Component({
