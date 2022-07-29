@@ -1,0 +1,74 @@
+<div class="card shadow-sm">
+  <div class="card-body px-4">
+    <h5 class="card-title text-center my-3">Add Product</h5>
+    <form [formGroup]="AddProductForm" (ngSubmit)="AddProduct()" class="row g-3 needs-validation" novalidate>
+      <!-- Title -->
+      <div class="col-md-4">
+        <label for="Title" class="form-label">Title</label>
+        <input type="text"
+               [ngClass]="{'is-invalid': (AddProductForm.get('title')?.touched || Submitted) && AddProductForm.get('title')?.errors?.required}"
+               class="form-control" id="Title" formControlName="title">
+        <div class="invalid-feedback">
+          Title is required
+        </div>
+      </div>
+
+      <!-- Price -->
+      <div class="col-md-4">
+        <label for="Price" class="form-label">Price</label>
+        <input type="number"
+               [ngClass]="{'is-invalid': (AddProductForm.get('price')?.touched || Submitted) && AddProductForm.get('price')?.errors?.required}"
+               class="form-control" id="Price" formControlName="price">
+        <div class="invalid-feedback">
+          Price is required
+        </div>
+      </div>
+
+      <!-- Category -->
+      <div class="col-md-4">
+        <label for="Category" class="form-label">Category</label>
+        <input type="text"
+               [ngClass]="{'is-invalid': (AddProductForm.get('category')?.touched || Submitted) && AddProductForm.get('category')?.errors?.required}"
+               class="form-control" id="Category" formControlName="category">
+        <div class="invalid-feedback">
+          Category is required
+        </div>
+      </div>
+
+      <!-- Image -->
+      <div class="col-md-4">
+        <label for="Image" class="form-label">Image</label>
+        <input [ngClass]="{'is-invalid': Submitted && AddProductForm.get('image')?.errors?.required}"
+          formControlName="image"
+          class="form-control" type="text" id="Image">
+        <div class="invalid-feedback">
+          Image is required
+        </div>
+      </div>
+
+      <!-- Image Preview -->
+      <!--<div class="col-md-4">
+        <div class="imagePreview" *ngIf="ImageURL && ImageURL !== ''">
+          <img [src]="ImageURL" class="img-fluid" [alt]="AddProductForm.value.title">
+        </div>
+      </div>-->
+
+      <!-- Description -->
+      <div class="col-md-12">
+        <label for="Description" class="form-label">Description</label>
+        <textarea class="form-control"
+                  [ngClass]="{'is-invalid': (AddProductForm.get('description')?.touched || Submitted) && AddProductForm.get('description')?.errors?.required}"
+                  id="Description" formControlName="description" rows="3"></textarea>
+        <div class="invalid-feedback">
+          Description is required
+        </div>
+      </div>
+
+      <div class="col-12">
+        <button class="btn btn-primary mb-4" [disabled]="Loading" type="submit">Add Product</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+

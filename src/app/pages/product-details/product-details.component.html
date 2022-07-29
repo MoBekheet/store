@@ -1,0 +1,19 @@
+<div class="card shadow-sm">
+  <div class="card-body px-4">
+    <h5 class="card-title text-center my-3">Product Details</h5>
+    <div class="row align-items-center">
+      <div class="col-md-4">
+        <img [src]="Product.image" class="img-fluid rounded-start" [alt]="Product.title">
+      </div>
+      <div class="col-md-8">
+        <div class="p-4">
+          <h5 class="mb-3">{{Product.title}}</h5>
+          <h5 class="mb-3 text-danger">${{Product.price}}</h5>
+          <p class="text-muted">{{Product.description}}</p>
+          <h6 class="mb-3">{{Product.category}}</h6>
+          <button type="button" class="btn btn-sm btn-primary" routerLink="/products">Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
